@@ -1,6 +1,6 @@
-# covid-action map
+# people-action map
 
-[covid-action map](https://covid-action-map.web.app) is a Leaflet.js map to make community action and support information useful to those who can help, and those who need help.
+[people-action map](https://people-action-map.web.app) is a Leaflet.js map to make community action and support information useful to those who can help, and those who need help.
 
 ## Development
 

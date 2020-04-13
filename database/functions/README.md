@@ -1,6 +1,6 @@
-# covid-action Cloud Functions
+# people-action Cloud Functions
 
-The covid-action Cloud Functions implement HTTP endpoints to interact with the data programmatically, and triggers for processing in the database.
+The people-action Cloud Functions implement HTTP endpoints to interact with the data programmatically, and triggers for processing in the database.
 
 ## Development
 

@@ -34,7 +34,7 @@ export class MapService {
             Authorization: token
           })
         }
-        const url = `https://europe-west1-covid-action.cloudfunctions.net/placeAutocomplete?input=${input}`
+        const url = `https://europe-west1-people-action.cloudfunctions.net/placeAutocomplete?input=${input}`
         return this.http.get(url, options) as Observable<PlaceSuggestion[]>
       })
     )
@@ -50,7 +50,7 @@ export class MapService {
             Authorization: token
           })
         }
-        const url = `https://europe-west1-covid-action.cloudfunctions.net/placeDetails?placeId=${placeId}`
+        const url = `https://europe-west1-people-action.cloudfunctions.net/placeDetails?placeId=${placeId}`
         return this.http.get(url, options) as Observable<Coordinates>
       })
     )

@@ -2,7 +2,7 @@
   <h1 class="display-4">Log in</h1>
   <p class="lead">
     <ng-container *ngIf="(targetUrl$ | async) !== '/locations/submit'; else locationSubmit">
-      This is where data for the <a href="https://covid-action-map.web.app/" target="_blank">covid-action map</a> can be maintained.
+      This is where data for the <a href="https://people-action-map.web.app/" target="_blank">people-action map</a> can be maintained.
     </ng-container>
     <ng-template #locationSubmit>
       Please log in to register the details of your organisation or group.

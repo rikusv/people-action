@@ -11,7 +11,7 @@ export interface ILocationData {
 }
 
 class LocationData {
-  private path = 'https://firestore.googleapis.com/v1/projects/covid-action/databases/(default)/documents/locations?pageSize=9999'
+  private path = 'https://firestore.googleapis.com/v1/projects/people-action/databases/(default)/documents/locations?pageSize=9999'
   private locations: ILocationData[] = []
   public async getData(refresh?: boolean): Promise<ILocationData[]> {
     if (!refresh && this.locations.length) {

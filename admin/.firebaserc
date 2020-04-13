@@ -1,12 +1,12 @@
 {
   "projects": {
-    "default": "covid-action"
+    "default": "people-action"
   },
   "targets": {
-    "covid-action": {
+    "people-action": {
       "hosting": {
         "admin": [
-          "covid-action-admin"
+          "people-action-admin"
         ]
       }
     }

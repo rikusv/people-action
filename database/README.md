@@ -1,6 +1,6 @@
-# covid-action database
+# people-action database
 
-The covid-action database if a Cloud Firestore database to store locations for the [covid-action map](../map/).
+The people-action database if a Cloud Firestore database to store locations for the [people-action map](../map/).
 
 ## Development
 
@@ -27,16 +27,16 @@ A Firebase project must be available, and Cloud Storage must be activated.
 For now, there is no automatic backup (it could be done using Cloud Functions - for example, see [Schedule data exports](https://firebase.google.com/docs/firestore/solutions/schedule-export)). To back up all the Firestore data:
 
 ```bash
-gcloud firestore export gs://covid-action.appspot.com/backups/$(TZ=UTC date '+%Y-%m-%dT%H:%M:%SZ')
+gcloud firestore export gs://people-action.appspot.com/backups/$(TZ=UTC date '+%Y-%m-%dT%H:%M:%SZ')
 ```
 
 To restore data from an export:
 
 ```bash
-gcloud firestore import gs://covid-action.appspot.com/backups/{timestamp}
+gcloud firestore import gs://people-action.appspot.com/backups/{timestamp}
 
 # Example:
-gcloud firestore import gs://covid-action.appspot.com/backups/2020-01-01T00:00:00Z
+gcloud firestore import gs://people-action.appspot.com/backups/2020-01-01T00:00:00Z
 ```
 
 See [Export and import data](https://firebase.google.com/docs/firestore/manage-data/export-import).

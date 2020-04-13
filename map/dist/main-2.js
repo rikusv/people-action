@@ -17520,7 +17520,7 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 };
 class LocationData {
     constructor() {
-        this.path = 'https://firestore.googleapis.com/v1/projects/covid-action/databases/(default)/documents/locations?pageSize=9999';
+        this.path = 'https://firestore.googleapis.com/v1/projects/people-action/databases/(default)/documents/locations?pageSize=9999';
         this.locations = [];
     }
     getData(refresh) {
