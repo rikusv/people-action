@@ -28,6 +28,7 @@ Build and deploy:
 ```bash
 npm install -g firebase-tools # First time
 firebase login
+firebase target:apply hosting map firestore-app-name # Once
 npm run deploy
 ```
 

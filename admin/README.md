@@ -1,6 +1,6 @@
 # people-action admin
 
-[people-action admin](https://people-action-admin.web.app) is an Angular app to manage locations on the [people-action map](../map/).
+[people-action admin](https://people-action.web.app) is an Angular app to manage locations on the [people-action map](../map/).
 
 ## Usage
 
@@ -10,7 +10,7 @@ Any user logged in with their Google account, can view locations.
 
 The `admin` role is needed to be able add and edit locations. For now, this is assigned very manually:
 
-1. Copy the user's UID (the user must have logged in to [people-action admin](https://people-action-admin.web.app) first) from the [Authentication](https://console.firebase.google.com/u/0/project/people-action/authentication/users) panel in the Firebase Console.
+1. Copy the user's UID (the user must have logged in to [people-action admin](https://people-action.web.app) first) from the [Authentication](https://console.firebase.google.com/u/0/project/people-action/authentication/users) panel in the Firebase Console.
 2. Create a document in the [users collection](https://console.firebase.google.com/u/0/project/people-action/database/firestore/data~2Fusers) in Firestore, with the `id` equal to the UID, and a `roles` map with the `admin` role:
     ```json
     {
@@ -39,6 +39,7 @@ This Angular app is deployed to Firebase Hosting:
 ```bash
 npm install -g firebase-tools # First time
 firebase login
+firebase target:apply hosting admin firestore-app-name # Once
 npm run deploy
 ```
 
