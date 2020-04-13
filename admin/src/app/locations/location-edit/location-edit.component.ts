@@ -35,6 +35,7 @@ export class LocationEditComponent implements OnInit {
   autocompleteInput: string
   selectedAddress: string
   coordinatesToggle: boolean
+  addressOkay = true
   apiKey = environment.firebase.apiKey
   mapUrl: SafeUrl
   showMap: boolean
@@ -66,19 +67,20 @@ export class LocationEditComponent implements OnInit {
       }),
       tap(location => {
         if (this.path === 'submit') {
-          this.heading = ['Submit', 'care group location for approval']
+          this.heading = ['Submit', 'location for approval']
         } else if (this.path === 'add') {
-          this.heading = ['Add', 'publish new care group location']
+          this.heading = ['Add', 'publish new location']
         } else if (this.collection === 'locations') {
-          this.heading = ['Edit', 'published care group location']
+          this.heading = ['Edit', 'published ']
         } else {
-          this.heading = ['Edit / Publish', 'pending care group location']
+          this.heading = ['Edit / Publish', 'pending location']
         }
         if (location === null) {
           if (!this.new) {
             this.router.navigate(['/', this.collection])
           }
         } else {
+          this.selectedAddress = location.address
           this.updateForm(location)
         }
       })
@@ -229,7 +231,14 @@ export class LocationEditComponent implements OnInit {
     ).subscribe()
   }
 
+
+  checkAddress(): boolean {
+    this.addressOkay = this.address.value === this.selectedAddress &&
+    this.googlePlaceId.value.length
+    return this.addressOkay
+  }
   submit() {
+    if (!this.checkAddress()) {return}
     const location = this.locationForm.getRawValue()
     this.locationService.submitLocation(location).pipe(
       take(1),
@@ -257,6 +266,7 @@ export class LocationEditComponent implements OnInit {
   }
 
   publish() {
+    if (!this.checkAddress()) {return}
     const location = this.locationForm.getRawValue()
     this.locationService.publishLocation(location, this.collection).pipe(
       take(1),

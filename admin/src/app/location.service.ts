@@ -58,20 +58,6 @@ export class LocationService {
     return queryRef.valueChanges({idField: 'id'})
   }
 
-  // get categories(): string[] {
-  //   return [
-  //     'Care Organisation',
-  //     'Community Based Organisation',
-  //     'Community Police Forum',
-  //     'Drop-off Point',
-  //     'Feeding Scheme',
-  //     'Food Distribution',
-  //     'Other',
-  //     'Shelter',
-  //     'WhatsApp Group'
-  //   ]
-  // }
-
   enableCategory(category: string): Observable<boolean> {
     return this.updateMasterData('categories', category, true)
   }

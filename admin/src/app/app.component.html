@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
 
   <a routerLink="/" class="navbar-brand">
-    <img src="assets/onelovesa_160x160.png" width="30" height="30" alt="onelovesa">
+    <img src="assets/logo-512x512.png" width="30" height="30" alt="people-action">
   </a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -104,9 +104,6 @@
 </div>
 
 <div class="container-fluid">
-  <router-outlet *ngIf="authUser$ | async; else showLogin"></router-outlet>
+  <app-login *ngIf="(authUser$ | async) === null"></app-login>
+  <router-outlet></router-outlet>
 </div>
-
-<ng-template #showLogin>
-  <app-login></app-login>
-</ng-template>

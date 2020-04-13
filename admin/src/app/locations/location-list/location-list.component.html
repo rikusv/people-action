@@ -1,3 +1,6 @@
+<div *ngIf="(locations$ | async) && (locations$ | async)?.length === 0" class="alert alert-light" role="alert">
+  No locations found.
+</div>
 <div class="row">
   <div *ngFor="let location of locations$ | async" class="col-sm-6">
     <app-location [location]="location" [collection]="collection"></app-location>

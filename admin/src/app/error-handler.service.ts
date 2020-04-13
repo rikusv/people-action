@@ -12,7 +12,10 @@ export class ErrorHandlerService implements ErrorHandler {
   ) {}
 
   handleError(error: Error) {
-    const message = error.toString()
+    let message = error.toString()
+    if (message === '[object Object]') {
+      message = error.message
+    }
     this.alertService.publishError(message)
   }
 

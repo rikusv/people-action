@@ -16,6 +16,7 @@ import { AboutComponent } from './about/about.component'
 const routes: Routes = [
   {
     path: '',
+    canActivate: [AuthGuard],
     component: LoggedInComponent
   },
   {

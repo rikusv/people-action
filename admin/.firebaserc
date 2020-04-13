@@ -6,7 +6,7 @@
     "people-action": {
       "hosting": {
         "admin": [
-          "people-action-admin"
+          "people-action"
         ]
       }
     }

@@ -71,7 +71,7 @@
               </span>
             </div>
             <input formControlName="address" (focus)="addressInFocus = true" (blur)="addressInFocus = false" class="form-control" autocomplete="new-password">
-            <div class="invalid-feedback" [class.active]="address.dirty && !addressInFocus && (address.value !== selectedAddress || !googlePlaceId)">
+            <div class="invalid-feedback" [class.active]="!addressOkay">
               Please select address from autocomplete list, or enter coordinates.
             </div>
           </div>
