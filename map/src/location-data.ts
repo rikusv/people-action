@@ -22,7 +22,7 @@ class LocationData {
     request.open('GET', this.path, true)
     const response: ILocationData[] = await new Promise((resolve) => {
       request.addEventListener('load', () => {
-        this.locations = request.response.documents
+        this.locations = request.response.documents ? request.response.documents
         .map((doc: any) => doc.fields)
         .map((fields: any) => ({
           category: fields.category.stringValue,
@@ -36,7 +36,7 @@ class LocationData {
           telephone: fields.telephone ? fields.telephone.stringValue : '',
           webUrl: fields.webUrl ? fields.webUrl.stringValue : '',
           whatsAppUrl: fields.whatsAppUrl ? fields.whatsAppUrl.stringValue : '',
-        }))
+        })) : []
         resolve(this.locations)
       })
       request.send()

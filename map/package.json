@@ -6,7 +6,7 @@
     "build": "webpack --mode development && npm run copy-static-files",
     "build-prod": "webpack --mode production && npm run copy-static-files",
     "deploy": "npm run build-prod && firebase deploy",
-    "copy-static-files": "cp src/index.html dist/index.html && cp src/style.css dist/style.css",
+    "copy-static-files": "cp src/index.html dist/index.html && cp src/style.css dist/style.css && cp src/favicon.ico dist/favicon.ico",
     "serve": "npm run build && firebase serve"
   },
   "private": true,
